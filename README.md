@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Website
 
-![Image text](https://github.com/ArthurChemov/currency_converter_AngularJS/tree/main/src/assets/site.png)
+![Image text](https://github.com/ArthurChemov/currency_converter_AngularJS/blob/main/src/assets/site.png)
