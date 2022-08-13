@@ -1,0 +1,36 @@
+<div class="header" style="justify-content:center; align-items:center;">Конвертер валют</div>
+<div style="display:flex; height:200px; justify-content:center; align-items:center;">
+<header class="exchange">
+  <div style="margin:5px">1 USD = {{_usd}} UAH</div>
+  <div style="margin:5px">1 EUR = {{_eur}} UAH</div>
+  <div style="margin:5px">1 GBP = {{_gbp}} UAH</div>
+</header>
+</div>
+<div style="display:flex; height:300px; justify-content:center; align-items:center;">
+  <div class="main-container">
+    <div class="selection-cont">
+      <select #c1 id="county1" (mouseleave)="changebase(c1.value)" (keyup)="getValue1(mon2.value)">
+        <option value="UAH">UAH</option>
+        <option value="USD">USD</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <form>
+        <input type="text" #mon1 id="money1" maxlength="20" restrict="reject" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" (keyup)="getValue1(mon1.value)" placeholder="200.00"/>
+      </form>
+    </div>
+    <div class="result-container">
+      <button (click)="swap(c1.value, c2.value)">&#8645;</button>
+      <div>1 {{base}} = {{result}} {{cont2}}</div>
+    </div>
+    <div class="selection-cont">
+      <select #c2 id="county2" (mouseleave)="tocountry(c2.value)">
+        <option value="UAH">UAH</option>
+        <option value="USD">USD</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <input type="text" #mon2 id="money2" maxlength="20"  restrict="reject" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" (keyup)="getValue2(mon2.value)" placeholder="200.00"/>
+    </div>
+  </div>
+</div>
