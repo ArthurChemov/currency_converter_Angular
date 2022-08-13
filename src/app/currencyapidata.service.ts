@@ -1,5 +1,7 @@
+import { /**HttpClientModule,*/ HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+//import { TestBed } from '@angular/core/testing';
+//import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -13,3 +15,12 @@ export class CurrencyapidataService {
     return this.http.get(url);
   }
 }
+/**
+TestBed.configureTestingModule({
+  imports: [
+    HttpClientTestingModule,
+    HttpClientModule
+  ],
+  providers: [CurrencyapidataService]
+});
+*/
