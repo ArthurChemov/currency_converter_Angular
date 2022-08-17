@@ -8,11 +8,11 @@ import { CurrencyapidataService } from '../api-data/currencyapidata.service';
   styleUrls: ['./head.component.scss']
 })
 export class HeadComponent implements OnInit {
-  currjson: any = [];
+  public currjson: any = [];
 
-  usd = 0;
-  eur = 0;
-  gbp = 0;
+  public usd: number = 0;
+  public eur: number = 0;
+  public gbp: number = 0;
 
   constructor(private currency: CurrencyapidataService){
     currency.getcurrencydata("USD").subscribe(data => {
