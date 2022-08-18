@@ -19,10 +19,11 @@ export class ConverterComponent implements OnInit {
   public input2: string = '';
 
   public states: any[] = [
-    { id: 1, name: 'UAH'},
-    { id: 2, name: 'USD'},
-    { id: 3, name: 'EUR'},
-    { id: 4, name: 'GBP'}
+    { name: 'UAH'},
+    { name: 'USD'},
+    { name: 'EUR'},
+    { name: 'GBP'}
+    //and etc
   ];
 
   public _select1: FormGroup | any = new FormGroup({
@@ -38,8 +39,8 @@ export class ConverterComponent implements OnInit {
   constructor(private currency: CurrencyapidataService) { }
 
   swap(a: string, b: string){
-    this._select1.controls['_select'].value = b;
-    this._select2.controls['_select'].value = a;
+    this._select1.controls['_select'].setValue(b);
+    this._select2.controls['_select'].setValue(a);
     this.convert();
   }
 
