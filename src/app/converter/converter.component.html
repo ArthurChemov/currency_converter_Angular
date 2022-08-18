@@ -1,30 +1,30 @@
 <section class="class-converter">
   <div class="selection">
     <form [formGroup]="_select1">
-      <select formControlName="_select" [(ngModel)]="curr1" (mouseleave)="changecurr(_select1.get('_select').value, 1)" (keyup)="getValue(_select1.get('_input').value, 1)">
+      <select formControlName="_select" [(ngModel)]="_select1.get('_select').value" (ngModelChange)="convert()">
         <option *ngFor="let state of states; let i = index" [ngValue]="states[i].name">
           {{ states[i].name }}
         </option>
       </select>
     </form>
     <form [formGroup]="_select1">
-      <input type="text" formControlName="_input" [(ngModel)]="currt1" maxlength="20" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0{1}/g, '');" (keyup)="getValue(_select1.controls['_input'].value, 1)" placeholder="200.00"/>
+      <input type="text" formControlName="_input" maxlength="20" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0{1}/g, '');" (keyup)="getValue(_select1.controls['_input'].value, 1)" placeholder="200.00"/>
     </form>
   </div>
   <div class="rate">
     <button (click)="swap(_select1.get('_select').value, _select2.get('_select').value)">&#8645;</button>
-    <span>1 {{curr1}} = {{result}} {{curr2}}</span>
+    <span>1 {{_select1.get('_select').value}} = {{result}} {{_select2.get('_select').value}}</span>
   </div>
   <div class="selection">
-    <div [formGroup]="_select2">
-      <select formControlName="_select" [(ngModel)]="curr2" (mouseleave)="changecurr(_select2.get('_select').value, 2)" (keyup)="getValue(money2.value, 2)">
+    <form [formGroup]="_select2">
+      <select formControlName="_select" [(ngModel)]="_select2.get('_select').value" (ngModelChange)="convert()">
         <option *ngFor="let state of states; let i = index" [ngValue]="states[i].name">
           {{ states[i].name }}
         </option>
       </select>
-    </div>
+    </form>
     <form [formGroup]="_select2">
-      <input type="text" formControlName="_input" [(ngModel)]="currt2" maxlength="20"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0{1}/g, '');" (keyup)="getValue(_select2.controls['_input'].value, 2)" placeholder="200.00"/>
+      <input type="text" formControlName="_input" maxlength="20"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0{1}/g, '');" (keyup)="getValue(_select2.controls['_input'].value, 2)" placeholder="200.00"/>
     </form>
   </div>
 </section>
