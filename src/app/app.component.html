@@ -12,8 +12,8 @@
   </h1>
 </div>
 
-<div class="head">
+<div class="head" *ngIf="!loader">
   Конвертер валют
 </div>
-<app-head></app-head>
-<app-converter></app-converter>
+<app-head *ngIf="!loader"></app-head>
+<app-converter *ngIf="!loader"></app-converter>
