@@ -7,21 +7,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { ConverterComponent } from './converter/converter.component';
+import { PreloaderComponent } from "./preloader/preloader.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeadComponent,
-    ConverterComponent
-  ],
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        PreloaderComponent,
+        HeadComponent,
+        ConverterComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ]
 })
 export class AppModule { }
